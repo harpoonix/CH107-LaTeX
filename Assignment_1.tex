@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\title{CH107 Home Assignment}
+\author{Harsh Poonia \thanks{I learnt \LaTeX{} for this assignment! I suppose we had to learn something in the process, and poetry isn't exactly my cup of tea.}}
+\date{29 January 2022}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+\begin{abstract}
+This is my recap of the past week in the course CH107, which covered Schroedinger's equation and free particle.
+\end{abstract}
+\section{Schroedinger's Equation}
+Schroedinger felt the need to develop a non-newtonian theory that could accurately describe behaviour of electrons, atoms and molecules. The classical theory failed at atomic/subatomic level and there were ideas that particles and waves could behave like one-another, so a wavelike \emph{probabilistic} theory was the need of the hour. 
+\subsection*{The equation}
+Schroedinger suggested his \textbf{time dependent Schroedinger equation (TDSE)}
+\[\hat{H}\psi=\hat{E}\psi\]
+where $\hat{E}$ is the Energy operator and $\hat{H}$ is the Hamiltonian operator. In 3 dimensions, 
+\[i\hbar \frac{\partial}{\partial t}\psi(\vec{r}, t)=\hat{H}\psi = \left[ \frac{-\hbar^2}{2m} \nabla^2 + V(\vec{r}) \right] \psi(\vec{r}, t)\]
+This is an equation with both spatial and temporal coordinates. Such equations are solved by \textbf{separation of variables}. $\psi(x, t)$ can be written as $\phi(x)\cdot \chi (t)$.
+This simplifies the SE to 
+\[\frac{i\hbar}{\chi (t)}\frac{\partial \chi(t)}{\partial t}=\frac{\hat{H}\phi(x)}{\phi(x)} = E \textrm{ (say)}\]
+Since both sides of the equation are in different variables, they must be equal to a constant, say $E$. Solving the time equation yields the time dependent part of $\psi(x, t)$.
+\[\chi(t)=\chi(0)\exp{\left( -\frac{iEt}{\hbar} \right)}\]
+\subsection*{Time Independent Schroedinger's Equation}
+$\hat{H}\psi = E\psi$ is the TISE. We can clearly see this is an \textbf{eigenvalue equation}. Thus, the solutions $\phi_n(x)$ to the TISE are eigenfunctions of the Hamiltonian with eigenvalues $E_n$. Equivalently, we can state that each solution is an energy eigenstate with a fixed energy.
+\paragraph{Operators}
+All physical observables in quantum mechanics are associated with an operator. When the operator acts on its eigenfunction, the eigenvalue returned is the value of the observable associated with $\hat{O}$.
+\subsection*{Laws of QM}
+\begin{itemize}
+\item Only real eigenvlaues can be observed which correspond to a physical observable.
+\item The eigenfunctions of a hermitian operator are \textbf{orthogonal}, which means that \[\langle \psi_m | \psi_n \rangle =\int_{-\infty}^{\infty} \psi_m^*(x) \psi_n(x) dx =0 \textrm{ if } m \neq n.\]
+
+\end{itemize}
+\paragraph{Measurement} The act of measurement of an observable associated with an operator forces the wavefuncton into an eigenfunction of the operator. This is called \textbf{collapse of the wavefunction}. 
+\begin{quote}
+\textbf{The value of an observable in quantum mechanics depends on the observer.}
+\end{quote}
+\subsection*{The (mysterious) wavefunction}
+\begin{center}
+\sffamily
+Erwin with his psi can do \\
+Calculations quite a few. \\
+But one thing has not been seen\\
+Just what does psi really mean?\\ 
+\end{center}
+\begin{flushright}
+\ttfamily
+-Walter Huckel (1926)\\
+\end{flushright}
+\normalfont
+\subsubsection*{Born Interpretation}
+Max Born suggested that the probability density of a particle described by the wavefunction $\psi$ is $\psi^* \psi$. The probability of finding the particle ( in one-dimension) in the region $(x-dx/2)$ to $(x+dx/2)$ is $|\psi|^2 dx.$
+\paragraph{Normalisation} Since the total probability of finding the particle over all space is $1$, we must have $\langle \psi | \psi \rangle =1 .$ Wavefunctions that are not square integrable are not permitted. 
+\subsubsection*{Restrictions on wavefunctions}
+\begin{itemize}
+\item The wavefunction must be a continuous function of $(x, y, z)$.
+\item $\psi$ must be single valued
+\end{itemize}
+\paragraph{Difficulty in understanding} For a free particle confined in a 1D box, the wavefunction is not differentiable at $x=0$ and $x=L$. Then how is the Hamiltonian defined at those points? (since $\displaystyle \frac{\partial^2 \psi(x)}{\partial x^2}$ is apparently $\infty$ at those points). Is the differentiability requirement for wavefunctions not strictly implemented?
+
+\section{Free Particle}
+A particle under influence of no forces is called a free particle. Solution of TISE for $V(x)=0$ is of the form $A \sin{kx} + B \cos{kx}$, where $k=\pm \frac{\sqrt{2mE}}{\hbar}$.
+Till now, there are no restrictions on $k$, and subsequently, on $E$. Quantisation still isn't apparent.
+\subsection*{Particle in 1D Box}
+Let the particle be trapped in an infinite potential well of length $L$. So the wavefunction vanishes outside this box since the particle cannot be present there. Thus, $\psi(x)=A \sin{kx} + B cos{kx}$ if $x\in [0, L]$ and $0 $ elsewhere.
+Imposing the \textbf{boundary conditions of continuity} and normalisability, we obtain 
+\[\psi(x)=\sqrt{\frac{2}{L}} \sin{\frac{n \pi x}{L}} \textrm{ where } n=1, 2, 3, 4 \dots \]
+We can see that \emph{quantisation} has been introduced, since $n$ (and thus energy) can only take certain discrete values.
+\begin{quote}
+\textbf{Boundary conditions are the origin of quantisation.}
+\end{quote}
+\[E_n = \frac{n^2 h^2}{8m L^2} \textrm{ where } n=1, 2, 3, \ldots\]
+We can see that zero-point energy (lowest energy of the particle) is non zero.
+\subsection*{Particle in 2D (square) box}
+We can again use separation of variables to deal with 2 dimensions.
+\[\psi(x,y)=\psi(x)\psi(y)\textrm{ and } \hat{H}=\hat{H}_x+\hat{H}_y \]
+The particle is free in both dimensions, so 
+$\psi(x,y)=\frac{2}{L} \sin{\frac{n \pi x}{L}} \sin{\frac{n \pi y}{L}}$.
+\subsubsection*{Degenerate states}
+Two states that have equal values of energy are called degenerate states. A rectangular box has less degeneracy than a square box since \textbf{symmetry and degeneracy go hand in hand}. For a square box, $(n,m)$ and $(m,n)$ states are degenerate since 
+\[E=E_x + E_y=\frac{h^2}{8mL^2}(n_x^2+m_x^2)\]
+
+
+
+
+
+\end{document}

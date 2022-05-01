@@ -1,0 +1,74 @@
+
+\documentclass[12pt]{article}
+\title{CH107 Assignment 2}
+\author{Harsh Poonia}
+\date{4 February 2022}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+\begin{abstract}
+    This is my recap of Week 2 of course CH107 which covered Rigid Rotor and Analysis of the Hydrogen Atom.
+\end{abstract}
+\section*{Spherical Polar Coordinates}
+Spherical polar coordinates can be used to locate any point in space, just like Cartesian coordinates.
+The parameters used are $r$, $\theta$ and $\phi$. \\
+$r$ is the euclidean distance from the point to the origin. In terms of cartesian coordinates, $r=\sqrt{x^2+y^2+z^2}$. 
+$\theta$ is the angle between the position vector of the point and the $z$-axis. $\cos \theta = \frac{z}{r}$. $\theta$ lies from $0$ to $\pi$.
+$\phi$ is the angle between projection of position vector on $xy$-plane and the $x$-axis. $\phi$ lies between $0$ to $2\pi$.
+\[z=r \cos \theta, y=r \sin \theta \sin \phi, x= r \sin \theta \cos \phi\]
+\[\text{Volume Element } dV = r^2 \sin \theta d\theta d\phi dr\]
+
+\section{Rigid Rotor}
+The basic premise of a rigid rotor is this - 2 massive bodies of masses $m1$ and $m2$ are freely revolving about their centre of mass and are constrained such that the distance between them is fixed. This problem is equal to the following simpler model - a single massive particle of mass $\mu $ is revolving in a circle of radius $r_0$ where $\mu$ is the \emph{reduced mass} of the system and $r$ is the \emph{radius of gyration} of the system about its centre of mass. 
+
+Spherical coordinates are more convenient to use while solving this problem.
+\subsection*{The Hamiltonian}
+\subsubsection*{The Laplacian}
+In polar coordinates, the laplacian takes the form
+\[\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right) + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta } \left(\sin \theta \frac{\partial}{\partial \theta }\right) +  \frac{1}{r^2 \sin^2{\theta}} \frac{\partial^2}{\partial \phi^2 } \]
+\subsubsection*{Kinetic and Potential energies}
+\[T = -\frac{\hbar^2}{2\mu}\nabla^2\]
+Potential energy for a rigid rotor is zero since distance between the bodies is invariant. \\ 
+Thus, $\hat{T}=\hat{H}$. Also since $r$ is constant, $T$ is invariant w.r.t change in $r$. Derivatives w.r.t $r$ in the Laplacian are thus $0$.
+
+We know, \[\hat{L}^2=-\hbar^2 \left[ \frac{1}{ \sin\theta} \frac{\partial}{\partial \theta } \left(\sin \theta \frac{\partial}{\partial \theta }\right) +  \frac{1}{\sin^2{\theta}} \frac{\partial^2}{\partial \phi^2 } \right]\]
+\[T=\frac{L^2}{2I}, I=\mu r_0^2, \Rightarrow \boxed{\hat{H}= \frac{\hat{L}^2}{2\mu r_0^2 }}\]
+\subsection*{The Wavefunction}
+The wavefunction that represents the rigid rotor system is a \textbf{spherical harmonic} and thus variable separable in $\theta$ and $\phi$. 
+\[Y_J^m=\Theta_{J, |m|}(\theta) \cdot \Phi_m(\phi)\]
+Divide both sides of the \emph{eigenvlaue} equation $\hat{H}Y=EY$ by $\Theta \cdot \Phi$, multiply both sides by $\sin^2{\theta}$, to obtain 
+\[-\frac{1}{\Phi}\frac{\partial^2 \Phi}{\partial \phi^2} = \beta^2 \sin^2\theta + \frac{\sin \theta}{\Theta} \frac{\partial}{\partial \theta} \left( \sin\theta \frac{\partial \Theta }{\partial \theta}\right) = m^2\]
+where $\beta = \displaystyle \frac{2\mu r_0^2}{\hbar^2}$ and $m $ is a constant.
+
+Solving for $\Phi$ and applying \textbf{boundary condition} that $\Phi(\phi + 2n\pi) = \Phi(\phi)$, we obtain
+\[\Phi=A \exp{(\pm i m \phi)} \text{ where } m=0, \pm 1, \pm 2, \pm 3 \ldots\]
+Change in $\phi$ corresponds to motion in the $xy$ plane, and we see that angular momentum along $z$ is thus \[\hat{L_z}=-i\hbar \frac{\partial}{\partial\phi}\]
+For our rigid rotor, angular momentum along $z$ is 
+\[\hat{L_z}\Phi=-i\hbar \frac{\partial}{\partial\phi} \left( Ae^{im\phi} \right) = \hbar m \Phi\]
+This phenomenon is called \textbf{space quantisation}, ie. angular momentum along $z$ axis can only take certain specific values.
+
+Solutions to $\Theta$ equation are a set of power series called \textbf{Associated Legendre Polynomials}, and require that $\beta= J(J+1)$ where $J \geq |m|$. Thus $(J, m)$ represent a specific wavefunction of the system with energy $\displaystyle E=\frac{\hbar^2 \beta}{2\mu r_0^2}= \frac{J(J+1)\hbar^2}{2I}$, clearly \textbf{quantised.} These degenerate enrgy states for the same $J$, but different $m$ differ in the \emph{orientation} of the angular momentum of the system.
+
+\section{Hydrogen Atom}
+\subsection*{Energy}
+The energy of the hydrogen atom can be split into 3 parts. 
+\[\hat{H}=\hat{T}_N+\hat{T}_e+\hat{V}_{N,e} = -\frac{\hbar^2}{2} \left( \frac{\nabla_N^2}{m_N} + \frac{\nabla_e^2}{m_e}\right) - \frac{1}{4\pi \epsilon_0} \frac{Ze^2}{r_{eN}}\]
+The wavefunction here is a function of $6$ parameters-the coordinates of nucleus and electron.
+
+Solving this system is much easier in the frame of the nucleus and using polar coordinates in that frame for the motion of electron.
+Separating the wavefunction $\Psi= \phi_N \phi_e$ into nucleus and electron parts, and Hamiltonian into $\hat{H}_N$ and $\hat{H}_e$, we obtain that \textbf{nuclues behaves like a free particle in 3D space.} 
+\subsection*{Wavefunction for Electron}
+For $\phi_e$, we write the Laplacian in spherical coordinates, and separate $\phi_e$ w.r.t 3 variables $r, \theta$ and $\phi$.\[\Psi_e = R(r) \Theta(\theta) \Phi(\phi)\]
+Using techniques for solving variable separable PDEs from rigid rotor, 
+\[\hat{L}^2 Y(\theta, \phi) = (\hbar^2 \beta) Y(\theta, \phi) \text{ where } \beta = l(l+1)\]
+\[\Phi=A \exp(im\phi) \Rightarrow \hat{L}_z \Phi = \hbar m \Phi\text{ and } \Theta = \text{ associated Legendre Polynomials}\]
+\subsubsection*{Angular momentum}
+The angular momentum in $z$ direction is again \textbf{space quantised} and total angular momentum is quantised with $|L|=\hbar \sqrt{l(l+1)}$. We have $l \geq |m|$. 
+
+We cannot measure $\Vec{L}$ without disturbing its direction. 
+\begin{quote}
+    \textbf{It is important to emphasize that the three wavefunctions $R, \Phi$ and $\Theta$ aren't completely independent of each other. Their dependences arise out of boundary conditions. This is the reason why the Hamiltonian is not separable with respect to  $(r, \theta, \phi)$ coordinates.} 
+\end{quote}
+$R(r)$ is dependent on quantum numbers $n$ and $l$, $\Theta (\theta)$ is dependent on $l$ and $m$, while $\Phi(\phi)$ is dependent on $m$.
+\end{document}

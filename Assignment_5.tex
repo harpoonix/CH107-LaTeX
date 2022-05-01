@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\title{CH107 Assignment 5}
+\author{Harsh Poonia}
+\date{26 February 2022}
+\addtolength{\topmargin}{-0.25in}
+
+\begin{document}
+
+\maketitle
+
+\section*{H$_2$ Molecule}
+We start by writing the Hamiltonian for dihydrogen molecule, a 2 electron - 2 nucleus system.
+\[\hat{H} = -\frac{\hbar^2}{2m_A}\nabla_A^2 - \frac{\hbar^2}{2m_B}\nabla_B^2 - \frac{\hbar^2}{2m_e} \left( \nabla_{e1}^2 + \nabla_{e2}^2 \right) -Qe^2\left( \frac{1}{r_{1A}} + \frac{1}{r_{1B}} \right) -Qe^2\left( \frac{1}{r_{2A}} + \frac{1}{r_{2B}} \right) + \frac{Qe^2}{r_{12}} + \frac{Qe^2}{R_{AB}} \]
+The potential $\hat{V}$ here includes attraction between electrons and nuclei and e-e and N-N repulsion. The Hamiltonian in this form is not solvable. We proceed by first making the \textbf{Born-Oppenheimer approximation}, that the nuclei are stationary with respect to electrons. So we ignore $\hat{T}_A$ and $\hat{T}_B$ terms and the $Qe^2/R$ term becomes constant for a given $R$.
+For H$_2$ molecule, the wavefunction is  
+\[\psi_1 = \psi_A(1) \psi_B(2) \textrm{ and } \psi_2 = \psi_A(2) \psi_B(1). \textbf{ Total wavefunction } \Psi = c_1\psi_1 + c_2 \psi_2 \]
+where the linear combination is suggested by \textbf{Heitler and London}. Here $\psi_A$ means $1$s orbital of atom A. We solve the Hamiltonian now and obtain 
+\[\boxed{E_{\pm} = \frac{J\pm K}{1\pm S^2}} \textrm{ where } J=\langle \psi_1 |\hat{V}|\psi_1 \rangle \textrm{, } K = \langle \psi_1 |\hat{V}|\psi_2 \rangle \textrm{ and } S=\langle 1s_A |1s_B \rangle \]
+here J is called the \textbf{coulomb integral}, K is called the \textbf{exchange integral}, and S is called the \textbf{overlap integral}.
+The lower energy corresponds to $+$ sign here, so it has symmetric spatial function and symmetric spin function. This is the singlet state. The higher energy one is analogously triplet. We can make the ground state energy more accurate by taking into account shielding, and ionic contributions to the molecule.
+\section*{Hybridisation}
+The idea is simple - linear combination of atomic orbitals within an atom lead to stronger, effective bonding. The hybrid orbitals thus formed are orthonormal to each other, and square of coeff. of atomic orbitals give the contribution. \\
+\textbf{sp hybrid} orbitals are formed from L-C of one $s$ and one $p$ orbital (say $p_z$) and have linear geometry. \[\psi_{\textrm{sp}} = \frac{\psi_s \pm \psi_{pz}}{\sqrt{2}}\]
+This has one nodal surface, and the nucleus lies \emph{within} the \emph{minor lobe}.\\
+\textbf{sp$^2$ hybrid} orbitals have trigonal geometry and have contribution from s and p in 1 : 2 ratio. The exact coefficients are determined by the orientation of the particular sp$^2$ orbital, through orthonormality of atomic as well as hybrid orbitals, normalisation and symmetry arguments. \\
+s orbital contributes equally to all 3 sp$^2$, so its coefficient is $1/\sqrt{3}$.
+\[\boxed{\psi_{\textrm{sp}^2} = c_1\psi_s + c_2\psi_{px} +c _3\psi_{py} } \]
+\end{document}

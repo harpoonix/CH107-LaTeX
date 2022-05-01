@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[margin=0.8in]{geometry}
+
+\title{CH107 Assignment 4}
+\author{Harsh Poonia}
+\date{19 February 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Many Electron Atoms}
+Consider a helium atom with 2 electrons. We seek to find solutions to TISE for this atom. 
+\[\hat{H} = \underbrace{\frac{-\hbar^2}{2m_N}\nabla_N^2}_{\hat{T}_N} + \underbrace{\frac{-\hbar^2}{2m_e}\nabla_1^2 +  \frac{-\hbar^2}{2m_e}\nabla_2^2}_{\hat{T}_1+\hat{T}_2} -\frac{1}{4\pi \epsilon_0} \left[ \frac{Z_Ne^2}{r_1} + \frac{Z_Ne^2}{r_2} - \frac{e^2}{r_{12}} \right] \equiv \hat{H}_N + \hat{H}_e = \hat{H}_N +  \hat{H}_1 + \hat{H}_2 + \frac{Qe^2}{r_{12}} \]
+We approximate the 2 e$^-$ wavefunction to be the product of wavefunctions of the 2 electrons as $\psi_e = \psi_{1e}(r_1, \theta_1, \phi_1)\cdot  \psi_{2e}(r_2, \theta_2, \phi_2)$.
+We find that this equation cannot be solved analytically due to the potential arising out of repulsion between electrons, so we resort to numerical methods. Every electron experiences \emph{net nuclear attraction} which is attraction by the nucleus counteracted by repulsion from other electrons, which leads us to concept of \textbf{shielding}. Manipulating the equation by getting rid of $\sum_{ij} \frac{Qe^2}{r_{ij}} $ and replacing $Z$ with $Z_{\textrm{eff}}$, can can solve the TISE.
+\paragraph{Spin}
+is the manifestation of 2 angular momentum states intrinsic to an electron. Spin angular momenta 
+\[|S|=\hbar\sqrt{s(s+1)} \textrm{, and } S_z = m_s\hbar \textrm{ where } m_s=s, s-1 \ldots ,-s \textrm{ ($2s+1$ values) }\]
+Here $s$ is the spin quantum number, which is $1/2$ for an e$^-$. Thus there are 2 spin states of an electron - $\alpha$ (spin up) and $\beta$ (spin down). We now incorporate spin into each 1 e$^-$ wavefunction and give rise to \textbf{spin orbitals}. Each atomic orbital is now doubly degenerate and has both \emph{spatial} and \emph{spin} coordinates with new quantum number $m_s$.
+
+For a 2e$^-$ system , there are $4$ spin functions 
+\[\alpha(1)\alpha(2) \textrm{;    }\beta(1)\beta(2) \textrm{;    } \frac{1}{\sqrt{2}} \left[ \alpha(1)\beta(2) + \beta(1) \alpha(2) \right] \textrm{;    } \frac{1}{\sqrt{2}} \left[ \alpha(1)\beta(2) - \beta(1) \alpha(2) \right] \]
+where the first 3 are \emph{symmetric} and the last is \emph{anti-symmetric}. The Pauli principle : 
+\begin{quote}
+    \textbf{The complete wavefunction of a system of identical fermions must be anti-symmetric with respect to interchange of all coordinates (spatial and spin) of any 2 particles}.
+\end{quote}
+This implies that one of spatial or spin functions is symmetric, and other must be anti-symmetric.
+\paragraph{Slater Determinants}
+are a way to represent many e$^-$ wavefunctions as a linear combination of various spatial and spin states. A many electronic wavefunction can be written as a slater determinant or a linear combination of them. This forms the complete wavefunction. 
+For an excited helium atom, it has a singlet and a triplet state. The singlet state has one possible anti-symmetric spin function and a symmetric spatial function. The triplet state has 3 possible symmetric spin functions. 
+\end{document}

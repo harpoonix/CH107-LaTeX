@@ -1,0 +1,28 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\title{CH107 Assignment 3}
+\author{Harsh Poonia}
+\date{12 February 2022}
+
+\begin{document}
+\maketitle
+\subsection*{Radial part of wavefunction}
+\[R_{nl}(r) = A \left( \frac{2Z}{na} \right)^{l+\frac{3}{2}} r^l e^{-\frac{Zr}{na_0}} L_{n+l}^{2l+1} \left(\frac{2Zr}{na}\right) \textrm{ where } L \textrm{ are associated Laguerre functions.} \]
+Here $n$ is the principal quantum number, restriction on $l$ is that $l<n$. The energy of the hydrogen atom predicted by Bohr is exactly equal to the one found using Schrodinger's equation. For s orbitals, $R(r)$ is maximum at the nucleus and decays exponentially as $r \rightarrow \infty$. If there are radial nodes ($=n-1$ for s orbitals), then $R(r)$ cuts the $x$ axis at the nodes, changes sign and forms progressively smaller peaks as it finally decays to zero.  The position of the radial nodes is determined by the Laguerre functions. 
+\begin{quote}
+    \textbf{An orbital is an acceptable solution to the Schrodinger's equation for a single electron atom. Using an orbital we can find the region of space where probability to find the electron is maximum, but that region is \emph{not an orbital}.}
+\end{quote}
+For orbitals with $l>1$(p, d, etc) $R(r)$ starts at zero due to the $r^l$ term, rises to a peak and falls due to the dominant exponenial part. When there are nodes, it cuts the x axis, changes its sign and goes on to form progressively smaller peaks(distance of extremas from x axis), before finally decaying to zero. The number of radial nodes are $n-l-1$, which is also the degree of the laguerre function. \[\textbf{Normalisation } \int_0^{\infty} R^2 r^2 dr =1 \textrm{ and }  \int_0^{\pi} \Theta^2 \sin \theta d \theta \int_0^{2\pi} \Phi^* \Phi d\phi = 1   \]
+For the graph of $r^2R^2(r)$ with $r$, the general trend is that it starts at zero, increasest till a peak and then falls due to the exponential part. If there are nodes, then interestingly, it forms peaks which are progressively greater in height. Thus the maximum radial probability is at the peak after the last node. This peak then decays to zero as $r \rightarrow \infty$. 
+\subsection*{Angular part}
+For a $2p_z$ orbital, the angular part is $\cos \theta$, so its \emph{angular node} is the $xy$ plane. It is an eigenfunction of $L_z$, and its eigenvalue is $0$. For $2p_x$ and $2p_y$, we use linear combination of $m=1$ and $m=-1$ eigenstates, and they are not eigenfunctions of $L_z$. Measurement of $L_z$ for them can yield $\hbar $ or $-\hbar$. 
+\begin{quote}
+    \textbf{Thus real orbitals can be constructed by taking linear combination of imaginary eigenfunctions of $L_z$ operator. }
+\end{quote}
+\paragraph{Contour diagram} These are a way to represent height of $3$D graph on paper. All points on a contour line have the same height, and all lines have constant difference in height. So, higher density of contour lines implies steep gradient at that point. Contour plots can be used to draw orbitals and their nodes. \textbf{The wavefunction must change sign at the node.}
+
+
+
+\end{document}
